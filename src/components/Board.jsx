@@ -105,7 +105,7 @@ function Board(props) {
                 }
             </span>
             <div style={styles.board}>
-                { board.map((value, idx) => <div key={idx} onClick={e => handleClick(idx)} style={styles.sqr}><span style={{lineHeight: '90px', color: value === 'X' ? '#ff8862' : '#73e278'}}>{value}</span></div>) }
+                { board.map((value, idx) => <div key={idx} onClick={e => handleClick(idx)} style={{...styles.sqr, cursor: winner ? 'not-allowed' : 'pointer'}}><span style={{lineHeight: '90px', color: value === 'X' ? '#ff8862' : '#73e278'}}>{value}</span></div>) }
             </div>
             <button style={styles.button} onClick={clearBoard}>Restart</button>
         </div>
