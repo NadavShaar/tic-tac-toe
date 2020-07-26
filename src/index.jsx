@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Board from './components/Board';
 
 import './index.css';
 
 const App = () => {
     return (
-        <div>
-            <h1>React-App</h1>
+        <div className="App">
+            <Board />
         </div>
     )
 };

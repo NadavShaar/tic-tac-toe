@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "A Webpack + Babel + React Starter bolerplate ",
   "main": "index.js",
+  "homepage": "https://nadavshaar.github.io/tic-tac-toe/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "Autoprefixer",
@@ -26,6 +29,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
