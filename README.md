@@ -1,5 +1,5 @@
 # tic-tac-toe
-The game.
+Tic-Tac-Toe: the game made with react using hooks.
 
 Live Demo [here](https://nadavshaar.github.io/tic-tac-toe/)
 
