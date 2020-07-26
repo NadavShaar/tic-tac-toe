@@ -1,2 +1,2 @@
-# React-boilerplate
-A boilerplate of react dev environment using babel &amp; webpack
+# tic-tac-toe
+The game.
