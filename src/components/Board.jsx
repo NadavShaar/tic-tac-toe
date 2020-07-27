@@ -36,11 +36,9 @@ const styles = {
     },
     sqr: {
         background: '#606e79',
-        display: 'inline-flex', 
-        alignItems: 'center',
+        display: 'inline-flex',
         justifyContent: 'center',
-        fontSize: 70,
-        paddingBottom: 10
+        fontSize: 70
     },
     button: {
         marginTop: 20,
@@ -62,6 +60,11 @@ const styles = {
         color: '#FFEB3B',
         fontSize: 54,
         fontWeight: 700
+    },
+    xo: {
+        display: 'inline-block', 
+        lineHeight: '72px', 
+        userSelect: 'none'
     }
 }
 
@@ -97,14 +100,25 @@ function Board(props) {
                         (winner && winner === 'O') ? 
                             'O - WON!' 
                             : 
-                            xIsNext ? 
-                                'X - Turn' 
+                            (winner && winner === 'none') ? 
+                                'Game Over' 
                                 : 
-                                'O - Turn'
+                                xIsNext ? 
+                                    'X - Turn' 
+                                    : 
+                                    'O - Turn'
                 }
             </span>
             <div style={styles.board}>
-                { board.map((value, idx) => <div key={idx} onClick={e => handleClick(idx)} style={{...styles.sqr, cursor: winner ? 'not-allowed' : 'pointer'}}><span style={{lineHeight: '90px', userSelect: 'none', color: value === 'X' ? '#ff8862' : '#73e278'}}>{value}</span></div>) }
+                { 
+                    board.map((value, idx) => (
+                        <div key={idx} onClick={e => handleClick(idx)} style={{...styles.sqr, cursor: winner ? 'not-allowed' : 'pointer'}}>
+                            <span style={{...styles.xo, color: value === 'X' ? '#ff8862' : '#73e278'}}>
+                                {value}
+                            </span>
+                        </div>
+                    ))
+                }
             </div>
             <button style={styles.button} onClick={clearBoard}>Restart</button>
         </div>

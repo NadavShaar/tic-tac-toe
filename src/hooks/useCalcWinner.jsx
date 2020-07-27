@@ -20,6 +20,8 @@ function useCalcWinner(board) {
         if(winningConditions[i].every(cv => xArray.indexOf(cv) >= 0)) return 'X';
         else if(winningConditions[i].every(cv => oArray.indexOf(cv) >= 0)) return 'O';
     }
+
+    if(xArray.length + oArray.length === 9) return 'none';
     
     return null;
 }
